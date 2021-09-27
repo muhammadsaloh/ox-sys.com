@@ -1,12 +1,11 @@
 import React from "react";
 import { Button, Table, Card } from "antd";
-
+import CustomTable from "./CustomTable";
 
 const AuthenticatedApp = () => {
 	const [data, setData] = React.useState(null);
 	const [isLoading, setIsLoading] = React.useState(false);
 	const user = window.localStorage.getItem("__token__");
-
 
 	const handleLogout = () => {
 		window.localStorage.removeItem("__token__");
@@ -46,7 +45,6 @@ const AuthenticatedApp = () => {
 		setIsLoading(false);
 	}
 
-
 	const columns = [
 		{
 			title: "Product",
@@ -63,7 +61,9 @@ const AuthenticatedApp = () => {
 	return (
 		<>
 			<Card>
-				<Button className="mb-3" onClick={() => handleLogout()}>Log Out</Button>
+				<Button className="mb-3" onClick={() => handleLogout()}>
+					Log Out
+				</Button>
 				<Table
 					rowKey={"id"}
 					loading={isLoading}
@@ -81,9 +81,11 @@ const AuthenticatedApp = () => {
 					}}
 				/>
 			</Card>
+			<Card>
+				<CustomTable />
+			</Card>
 		</>
 	);
 };
 
 export default AuthenticatedApp;
-
