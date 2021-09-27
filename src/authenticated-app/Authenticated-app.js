@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Table, Card, Input, Space } from "antd";
+import { Button, Table, Card } from "antd";
 
 
 const AuthenticatedApp = () => {
@@ -14,7 +14,7 @@ const AuthenticatedApp = () => {
 	};
 
 	const [page, setPage] = React.useState(1);
-	const [size, setSize] = React.useState(10);
+	const [setSize] = React.useState(10);
 
 	React.useEffect(() => {
 		fetchDatas();
